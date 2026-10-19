@@ -7,35 +7,39 @@ body {
   margin: 0;
   display: grid;
   place-items: center;
-  background: #f1f5f9;
+  background: #fff;
   font-family: Arial, sans-serif;
 }
 
 button {
-  padding: 12px 24px;
-  border: 0;
-  border-radius: 8px;
-  background: #2563eb;
+  min-width: 268px;
+  min-height: 105px;
+  padding: 20px 36px;
+  border: 8px solid #d967b0;
+  border-radius: 42px;
+  background: #f078c5;
   color: #fff;
   font: inherit;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgb(37 99 235 / 25%);
-  transition: background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  transition: background-color 180ms ease, border-color 180ms ease;
 }
 
 button:hover {
-  background: #1d4ed8;
-  box-shadow: 0 6px 14px rgb(37 99 235 / 30%);
-  transform: translateY(-2px);
-}
-
-button:active {
-  transform: translateY(0);
+  border-color: #71365f;
+  background: #a85291;
 }
 
 button:focus-visible {
-  outline: 3px solid #93c5fd;
-  outline-offset: 3px;
+  outline: 3px solid #222;
+  outline-offset: 5px;
+}
+
+@media (max-width: 360px) {
+  button {
+    min-width: 0;
+    width: calc(100vw - 48px);
+  }
 }

@@ -1,71 +1,97 @@
-body {
+* {
     box-sizing: border-box;
-    min-height: 100vh;
-    margin: 0;
-    padding: clamp(24px, 6vw, 80px);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
-    align-content: center;
-    gap: 24px;
-    background: linear-gradient(135deg, #eff6ff, #f8fafc 55%, #ecfeff);
-    color: #1e293b;
+}
+
+html {
+    background: #fff;
+}
+
+body {
+    width: 80%;
+    max-width: 900px;
+    margin: 24px auto;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background: #808080;
+    color: #222;
     font-family: Arial, sans-serif;
 }
 
 body > div {
-    box-sizing: border-box;
-    min-height: 220px;
-    padding: 28px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border: 1px solid #e2e8f0;
-    border-radius: 18px;
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
     background: #fff;
-    box-shadow: 0 12px 30px rgb(15 23 42 / 8%);
-    transition: transform 180ms ease, box-shadow 180ms ease;
-}
-
-body > div:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 18px 36px rgb(15 23 42 / 13%);
 }
 
 body > div p {
-    margin: 0 0 24px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    line-height: 1.6;
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 button {
-    margin-top: auto;
-    padding: 10px 16px;
+    padding: 8px 10px;
     border: 0;
-    border-radius: 8px;
-    background: #2563eb;
+    border-radius: 30px;
     color: #fff;
     font: inherit;
-    font-weight: 600;
+    font-size: 12px;
     cursor: pointer;
     transition: background-color 160ms ease, transform 160ms ease;
 }
 
+body > div:nth-of-type(1) button {
+    background: #008577;
+}
+
+body > div:nth-of-type(1) button:hover {
+    background: #006b60;
+}
+
+body > div:nth-of-type(2) button {
+    background: #ff9800;
+}
+
+body > div:nth-of-type(2) button:hover {
+    background: #e68900;
+}
+
+body > div:nth-of-type(3) button {
+    background: #800080;
+}
+
+body > div:nth-of-type(3) button:hover {
+    background: #660066;
+}
+
 button:hover {
     transform: translateY(-1px);
-    background: #1d4ed8;
 }
 
 button:focus-visible {
-    outline: 3px solid #93c5fd;
+    outline: 3px solid #222;
     outline-offset: 3px;
 }
 
+@media (max-width: 480px) {
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 20px 0;
+    }
+
+    body > div {
+        width: calc(100% - 40px);
+        padding: 20px;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
+    button {
+        transition: none;
     }
 }
